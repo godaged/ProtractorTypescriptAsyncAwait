@@ -1,0 +1,23 @@
+{
+  "name": "learn-testing-automation",
+  "version": "1.0.0",
+  "description": "Learn Test Automation",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "pretest": "npm run tsc",
+    "test": "protractor e2e/outJS/config.js"
+  },
+  "author": "Dhanapala Godage",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jasmine": "^3.3.6",
+    "@types/node": "^11.13.0",
+    "jasmine": "^3.3.1",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasminewd": "^1.1.0",
+    "protractor": "^5.4.2",
+    "typescript": "^3.3.1"
+  }
+}
