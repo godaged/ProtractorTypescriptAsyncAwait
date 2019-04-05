@@ -1,20 +1,19 @@
-
-import {browser} from 'protractor';
-import {Calculator} from './Calculator-po';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const protractor_1 = require("protractor");
+const Calculator_po_1 = require("./Calculator-po");
 let using = require('jasmine-data-provider');
 let testData = require('../TestData/dataSet-01');
-
 let firstNum = 1;
 let secondNum = 1;
 let resultAdd = 2;
-let resultMult= 1;
-let resultSubs= 0;
-let resultDivi= 1;
-let resultModu= 0;
-
-let calculator = new Calculator();
-beforeEach(function (){
-    browser.get('http://juliemr.github.io/protractor-demo/');
+let resultMult = 1;
+let resultSubs = 0;
+let resultDivi = 1;
+let resultModu = 0;
+let calculator = new Calculator_po_1.Calculator();
+beforeEach(function () {
+    protractor_1.browser.get('http://juliemr.github.io/protractor-demo/');
 });
 describe('Super Calculator ', () => {
     it('should add ', async () => {
@@ -38,14 +37,12 @@ describe('Super Calculator ', () => {
         expect(await calculator.result.getText()).toEqual(resultModu.toString());
     });
 });
-
 //using external test data
 describe('Super Calculator with external test data', () => {
-    using(testData.dataSet01,  function( data : any, description: any){
+    using(testData.dataSet01, function (data, description) {
         it('should have ' + description, async () => {
             await calculator.calculate(data.num1, data.num2, data.operator);
             expect(await calculator.result.getText()).toEqual(data.result);
         });
-    })
-    
+    });
 });

@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const protractor_1 = require("protractor");
 class Calculator {
     constructor() {
+        //instead of using by.model, thought to use by.css
         this.firstNumber = protractor_1.element(protractor_1.by.css('input[ng-model="first"]'));
         this.secondNumber = protractor_1.element(protractor_1.by.css('input[ng-model="second"]'));
         this.operatorDDL = protractor_1.element(protractor_1.by.css('select[ng-model="operator"]'));

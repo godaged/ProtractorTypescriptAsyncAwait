@@ -1,6 +1,7 @@
 
 import {element, by, ElementFinder} from 'protractor';
 export class Calculator {
+    //instead of using by.model, thought to use by.css
     firstNumber     = element(by.css('input[ng-model="first"]'));
     secondNumber    = element(by.css('input[ng-model="second"]'));
     operatorDDL     = element(by.css('select[ng-model="operator"]'));
